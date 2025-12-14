@@ -72,7 +72,15 @@ export default function Register() {
                     'Content-Type' : 'multipart/form-data'
                 }
             })
+
         const mainPhotoUrl = res.data.data.display_url
+
+        const formData = {
+                email,
+                pass,
+                name,
+                mainPhotoUrl,
+        }
    
         try {
            
@@ -85,6 +93,9 @@ export default function Register() {
             });
 
             setUser(user);
+            axios.post('http://localhost:3000/users', formData)
+            .then(res => {console.log(res.data)})
+            .catch(err => console.log(err))
 
             const redirectTo = location.state?.from?.pathname || '/';
             navigate(redirectTo, { replace: true });
