@@ -25,13 +25,13 @@ const AuthProvider = ({children}) => {
         }
     }, [])
 
-     useEffect(() => {
-        if(!user) return
-        axios.get(`http://localhost:3000/users/role/${user.email}`)
-        .then(res =>{
-                setRole(res.data.role)
-            })
-      },[user])
+    //  useEffect(() => {
+    //     if(!user) return
+    //     axios.get(`http://localhost:3000/users/role/${user.email}`)
+    //     .then(res =>{
+    //             setRole(res.data.role)
+    //         })
+    //   },[user])
 
       console.log(role)
     

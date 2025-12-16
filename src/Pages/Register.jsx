@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router'; 
-import { Mail, Lock, Gamepad2, UserRoundPen, ImagePlus, Dog } from 'lucide-react';
+import { Mail, Lock, Gamepad2, UserRoundPen, ImagePlus, Dog, UserRound } from 'lucide-react';
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { Bounce, toast } from 'react-toastify';
@@ -9,10 +9,22 @@ import axios from 'axios';
 
 export default function Register() {
     const { registerWithEmailPassword, setUser } = useContext(AuthContext);
+    const [upazilas, setUpazilas] = useState([])
+    const [districts, setDistricts] = useState([])
+     const [upazila, setUpazila] = useState('')
+    const [district, setDistrict] = useState('')
 
     
     const location = useLocation();
     const navigate = useNavigate();
+
+
+    useEffect(()=>{
+      axios.get('../upazila.json')
+      .then(res => setUpazilas(res.data.upazilas))
+      axios.get('../district.json')
+      .then(res => setDistricts(res.data.districts))
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,6 +33,7 @@ export default function Register() {
         const photoUrl = e.target.photoUrl;
         const file = photoUrl.files[0]
         const name = e.target.name.value.trim();
+        const blood = e.target.blood.value.trim();
 
         
         const uppercase = /[A-Z]/;
@@ -80,7 +93,11 @@ export default function Register() {
                 pass,
                 name,
                 mainPhotoUrl,
+                blood,
+                district,
+                upazila
         }
+
    
         try {
            
@@ -166,6 +183,51 @@ export default function Register() {
 
                 <div>
                   <label className="flex items-center gap-3 text-gray-300 mb-2 text-sm font-medium">
+                    <UserRound className="w-5 h-5" />
+                    Blood Group
+                  </label>
+                  <select name='blood' defaultValue="Choose Blood Group" className=" w-full px-4 py-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-purple-500/20 transition-all">
+                    <option disabled={true}>Choose Blood Group</option>
+                    <option value='A+'>A+</option>
+                    <option value='A-'>A-</option>
+                    <option value='B+'>B+</option>
+                    <option value='B-'>B-</option>
+                    <option value='O+'>O+</option>
+                    <option value='O-'>O-</option>
+                    <option value='AB+'>AB+</option>
+                    <option value='AB-'>AB-</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="flex items-center gap-3 text-gray-300 mb-2 text-sm font-medium">
+                    <UserRound className="w-5 h-5" />
+                    Select District
+                  </label>
+                  <select value={district} onChange={(e) => setDistrict(e.target.value)} className=" w-full px-4 py-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-purple-500/20 transition-all">
+                    <option disabled selected value=''>Select Your District</option>
+                    {
+                      districts.map(d => <option value={d?.name} key={d.id}>{d?.name}</option>)
+                    }
+                  </select>
+                </div>
+                <div>
+                  <label className="flex items-center gap-3 text-gray-300 mb-2 text-sm font-medium">
+                    <UserRound className="w-5 h-5" />
+                    Select Upazila
+                  </label>
+                  <select value={upazila} onChange={(e) => setUpazila(e.target.value)} className=" w-full px-4 py-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-purple-500/20 transition-all">
+                    <option disabled value=''>Select Your Upazila</option>
+                    {
+                      upazilas.map(u => <option value={u?.name} key={u.id}>{u?.name}</option>)
+                    }
+                  </select>
+                </div>
+
+
+
+                <div>
+                  <label className="flex items-center gap-3 text-gray-300 mb-2 text-sm font-medium">
                     <Lock className="w-5 h-5" />
                     Password
                   </label>
@@ -189,17 +251,6 @@ export default function Register() {
                 >
                   Sign Up
                 </button>
-
-                <div className="relative my-8">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-600" />
-                  </div>
-                  <div className="relative flex justify-center text-sm">
-                    <span className="px-4 text-white">Or continue with</span>
-                  </div>
-                </div>
-
-                
               </form>
             </div>
           </div>
