@@ -9,6 +9,7 @@ import {
   HiOutlineCog,
   HiOutlineLogout,
 } from 'react-icons/hi';
+import { Link, NavLink } from 'react-router';
 
 const Aside = () => {
   return (
@@ -24,69 +25,35 @@ const Aside = () => {
       {/* Navigation Menu */}
       <nav className="flex-1 px-4 py-6">
         <ul className="space-y-2">
+
+
+
           <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineHome size={24} />
-              <span className="text-lg">Dashboard</span>
-            </a>
+            <NavLink to='/dashboard/add-request'
+              className={({isActive}) =>
+                `flex items-center space-x-4 px-4 py-3 rounded-lg transition ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
+              <HiOutlineHeart size={24} /> <span className="text-lg">Add Request</span>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineUserGroup size={24} />
-              <span className="text-lg">Donors</span>
-            </a>
+            <NavLink to='/dashboard/add-request'
+              className={({isActive}) =>
+                `flex items-center space-x-4 px-4 py-3 rounded-lg transition ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
+              <HiOutlineHeart size={24} /> <span className="text-lg">Add Request</span>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineHeart size={24} />
-              <span className="text-lg">Blood Requests</span>
-            </a>
+            <NavLink to='/dashboard/add-request'
+              className={({isActive}) =>
+                `flex items-center space-x-4 px-4 py-3 rounded-lg transition hover:bg-red-600 ${isActive? "bg-white text-red-500":""}  }`}>
+              <HiOutlineHeart size={24} /> <span className="text-lg">Add Request</span>
+            </NavLink>
           </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineClipboardList size={24} />
-              <span className="text-lg">Blood Stock</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineChartPie size={24} />
-              <span className="text-lg">Analytics</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineInbox size={24} />
-              <span className="text-lg">Enquiries</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
-            >
-              <HiOutlineCog size={24} />
-              <span className="text-lg">Settings</span>
-            </a>
-          </li>
+
+
+
+
+         
         </ul>
       </nav>
 

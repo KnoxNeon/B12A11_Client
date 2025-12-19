@@ -11,7 +11,7 @@ export default function Register() {
     const { registerWithEmailPassword, setUser } = useContext(AuthContext);
     const [upazilas, setUpazilas] = useState([])
     const [districts, setDistricts] = useState([])
-     const [upazila, setUpazila] = useState('')
+    const [upazila, setUpazila] = useState('')
     const [district, setDistrict] = useState('')
 
     
