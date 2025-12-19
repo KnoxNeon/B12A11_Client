@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../Provider/AuthProvider'
 import axios from 'axios'
-import useAxios from '../../../Hooks/useAxios'
 import Swal from 'sweetalert2'
+import useAxiosSecure from '../../../Hooks/useAxiosSecure'
 
 const AddRequest = () => {
     const {user} = useContext(AuthContext)
@@ -10,8 +10,7 @@ const AddRequest = () => {
     const [districts, setDistricts] = useState([])
     const [upazila, setUpazila] = useState('')
     const [district, setDistrict] = useState('')
-
-    const axiosInstance = useAxios()
+    const axiosSecure = useAxiosSecure()
 
     useEffect(()=>{
       axios.get('../upazila.json')
@@ -45,7 +44,7 @@ const AddRequest = () => {
           donation_status:'pending'
         };
 
-        axiosInstance.post('/requests', formData)
+        axiosSecure.post('/requests', formData)
         .then(res=>{
         console.log(res)
         if(res.data.acknowledged){
