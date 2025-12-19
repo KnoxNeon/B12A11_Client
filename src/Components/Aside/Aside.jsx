@@ -1,4 +1,5 @@
 
+import { useContext } from 'react';
 import {
   HiOutlineHome,
   HiOutlineUserGroup,
@@ -10,8 +11,17 @@ import {
   HiOutlineLogout,
 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
+import auth from '../../Firebase/firebase.config';
+import { signOut } from 'firebase/auth';
 
 const Aside = () => {
+
+  const handleSignOut = () =>{
+    signOut(auth)
+  }
+
+  const {role} = useContext(AuthContext)
   return (
     <aside className="bg-red-500 text-white w-64 h-screen flex flex-col">
       {/* Logo/Header */}
@@ -35,20 +45,30 @@ const Aside = () => {
               <HiOutlineHome size={24} /> <span className="text-lg">DashBoard</span>
             </NavLink>
           </li>
-          <li>
+
+          {
+            role == 'donor' && (
+              <li>
             <NavLink to='/dashboard/add-request'
               className={({isActive}) =>
                 `flex items-center space-x-4 px-4 py-3 rounded-lg transition ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
               <HiOutlineHeart size={24} /> <span className="text-lg">Add Request</span>
             </NavLink>
           </li>
-          <li>
+            )
+          }
+
+          {
+            role == 'Admin' && (
+              <li>
             <NavLink to='/dashboard/all-users'
               className={({isActive}) =>
                 `flex items-center space-x-4 px-4 py-3 rounded-lg transition  ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
               <HiOutlineUserGroup size={24} /> <span className="text-lg">All Users</span>
             </NavLink>
           </li>
+            )
+          }
 
 
 
@@ -59,13 +79,12 @@ const Aside = () => {
 
       {/* Logout */}
       <div className="p-4 border-t border-red-600">
-        <a
-          href="#"
+        <button onClick={handleSignOut}
           className="flex items-center space-x-4 px-4 py-3 rounded-lg hover:bg-red-600 transition"
         >
           <HiOutlineLogout size={24} />
           <span className="text-lg">Logout</span>
-        </a>
+        </button>
       </div>
     </aside>
   );
