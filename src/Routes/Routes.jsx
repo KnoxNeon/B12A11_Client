@@ -9,6 +9,7 @@ import MainDashboard from "../Pages/Dashboard/MainDashboard/MainDashboard";
 import AddRequest from "../Pages/Dashboard/AddRequest/AddRequest";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import MyRequests from "../Pages/Dashboard/My Requests/MyRequests";
+import Donate from "../Pages/Donate";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
         {
            path: "/register", 
            element: <Register/> 
+        },
+        {
+           path: "/donate", 
+           element: <Donate/> 
         },
       
     ],

@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link to="/add-services">Add Listings</Link>
               </li>
               <li>
-                <Link to="/my-services">My Listings</Link>
+                <Link to="/my-services">Donate</Link>
               </li>
               <li>
                 <Link to="/my-orders">My Orders</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/services">Pets & Supplies</Link>
+                <Link to="/services">Donate</Link>
               </li>
           
               </ul>
@@ -99,16 +99,13 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/services">Pets & Supplies</Link>
+                <Link to="/services">All Requests</Link>
               </li>
               <li>
-                <Link to="/add-services">Add Listings</Link>
+                <Link to="/add-services">Search</Link>
               </li>
               <li>
-                <Link to="/my-services">My Listings</Link>
-              </li>
-              <li>
-                <Link to="/my-orders">My Orders</Link>
+                <Link to="/donate">Donate</Link>
               </li>
             </ul>
           )}
@@ -119,8 +116,13 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                {" "}
-                <Link to="/services">Pets & Supplies</Link>
+                <Link to="/services">All Requests</Link>
+              </li>
+              <li>
+                <Link to="/add-services">Search</Link>
+              </li>
+              <li>
+                <Link to="/donate">Donate</Link>
               </li>
             </ul>
           )}
