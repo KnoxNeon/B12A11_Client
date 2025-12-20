@@ -10,6 +10,7 @@ import AddRequest from "../Pages/Dashboard/AddRequest/AddRequest";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import MyRequests from "../Pages/Dashboard/My Requests/MyRequests";
 import Donate from "../Pages/Donate";
+import PaymentSuccess from "../Pages/Payment/PaymentSuccess";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         {
            path: "/donate", 
            element: <Donate/> 
+        },
+        {
+           path: "/payment-success", 
+           element: <PaymentSuccess/> 
         },
       
     ],

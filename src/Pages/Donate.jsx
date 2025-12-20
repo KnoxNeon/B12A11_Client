@@ -21,10 +21,6 @@ const Donate = () => {
             donorName,
         }
 
-
-
-
-
         axiosInstance.post('/create-payment-checkout', formData)
         .then(res =>{
             console.log(res.data)
