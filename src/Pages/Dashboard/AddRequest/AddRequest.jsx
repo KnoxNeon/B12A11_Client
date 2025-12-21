@@ -226,7 +226,6 @@ const AddRequest = () => {
           </button>
         </div>
 
-        {/* Hidden note: Status will be "Pending" by default (not shown in form) */}
       </form>
     </div>
   )

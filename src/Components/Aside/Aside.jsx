@@ -10,6 +10,7 @@ import {
   HiOutlineInbox,
   HiOutlineCog,
   HiOutlineLogout,
+  HiOutlineUser,
 } from 'react-icons/hi';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -46,6 +47,13 @@ const Aside = () => {
               <HiOutlineHome size={24} /> <span className="text-lg">DashBoard</span>
             </NavLink>
           </li>
+          <li>
+            <NavLink to='/dashboard/my-profile'
+              className={({isActive}) =>
+                `flex items-center space-x-4 px-4 py-3 rounded-lg transition  ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
+              <HiOutlineUser size={24} /> <span className="text-lg">My Profile</span>
+            </NavLink>
+          </li>
 
           {
             role == 'donor' && (
@@ -70,14 +78,18 @@ const Aside = () => {
           </li>
             )
           }
-
-          <li>
+          {
+            role == 'donor' && (
+            <li>
             <NavLink to='/dashboard/my-requests'
               className={({isActive}) =>
                 `flex items-center space-x-4 px-4 py-3 rounded-lg transition ${isActive? "bg-white text-red-500":"hover:bg-red-600"}  }`}>
               <HiOutlineUserAdd size={24} /> <span className="text-lg">My Requests</span>
             </NavLink>
           </li>
+            )
+          }
+          
 
 
 
