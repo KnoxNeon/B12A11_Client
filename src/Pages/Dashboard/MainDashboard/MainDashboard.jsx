@@ -27,7 +27,7 @@ const MainDashboard = () => {
     } else {
       axiosSecure.get('/my-recent-requests')
         .then(res => {
-          setRecentRequests(res.data);
+          setRecentRequests(Array.isArray(res.data) ? res.data : []);
           setLoading(false);
         })
         .catch(err => {
@@ -36,6 +36,8 @@ const MainDashboard = () => {
         });
     }
   }, [firebaseUser, role, roleLoading, axiosSecure]);
+
+  console.log(recentRequests)
 
   const handleStatusChange = (id, newStatus) => {
     Swal.fire({
