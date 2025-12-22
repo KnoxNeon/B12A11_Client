@@ -135,13 +135,12 @@ export default function Register() {
         <div className="flex flex-col lg:flex-row items-center gap-40">
         
           <div className="text-center lg:text-left max-w-lg flex items-center">
-            <Dog className='h-full w-full'/>
-            <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-sky-900 to-sky-500 tracking-tight">
-              <span className='text-black'>Find your</span> Furry Friend <span className='text-black'>Today</span>
+            <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-red-500 tracking-tight">
+              <span className='text-black'>Someone</span> Might Be Needing Blood<span className='text-black'> At this very moment</span>
             </h1>
           </div>
           <div className="w-full max-w-md">
-            <div className="bg-sky-800 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700 p-8">
+            <div className="bg-linear-to-b from-sky-900 to-black backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700 p-8">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Register an Account
               </h2>

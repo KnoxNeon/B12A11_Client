@@ -40,7 +40,7 @@ const AllRequests = () => {
       <title>All Requests</title>
       <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
   <table className="table">
-    {/* head */}
+   
     <thead>
       <tr>
         <th>Order</th>
@@ -51,7 +51,7 @@ const AllRequests = () => {
     </thead>
     <tbody>
 
-      {/* row 1 */}
+      
       {
         allRequests.map((request,index) => 
             <tr>

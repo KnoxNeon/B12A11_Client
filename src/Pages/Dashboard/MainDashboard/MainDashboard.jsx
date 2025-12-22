@@ -84,44 +84,44 @@ const MainDashboard = () => {
   };
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
-    
-      <h2 className="text-4xl font-bold  text-center mb-12">
+    <div className="md:p-6 max-w-6xl mx-auto">
+      <title>DashBoard Home</title>
+      <h2 className="text-xl md:text-4xl font-bold  text-center md:mb-12">
         Welcome back, <span className='text-red-700'>{firebaseUser?.displayName || 'Donor'}!</span>
       </h2>
 
       {(role == 'admin' || role == 'volunteer')  && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Total Donors */}
-          <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white rounded-2xl shadow-xl p-8 flex items-center space-x-6 transform hover:scale-105 transition">
+          <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center space-x-6 transform hover:scale-105 transition">
             <div className="p-4 bg-white bg-opacity-20 rounded-full">
               <Users className='text-black fill-zinc-400' size={48} />
             </div>
             <div>
               <h3 className="text-4xl font-bold">{stats.totalUsers}</h3>
-              <p className="text-lg mt-2 opacity-90">Total Donors</p>
+              <p className="text-lg md:mt-2 opacity-90">Total Donors</p>
             </div>
           </div>
 
           {/* Total Funding */}
-          <div className="bg-linear-to-br from-green-500 to-green-600 text-white rounded-2xl shadow-xl p-8 flex items-center space-x-6 transform hover:scale-105 transition">
-            <div className="p-4 bg-white bg-opacity-20 rounded-full">
+          <div className="bg-linear-to-br from-green-500 to-green-600 text-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center space-x-6 transform hover:scale-105 transition">
+            <div className="p-1 md:p-4 bg-white bg-opacity-20 rounded-full">
               <DollarSign className='text-black fill-amber-300' size={48} />
             </div>
             <div>
               <h3 className="text-4xl font-bold">${stats.totalFunding.toFixed(2)}</h3>
-              <p className="text-lg mt-2 opacity-90">Total Funding</p>
+              <p className="text-lg md:mt-2 opacity-90">Total Funding</p>
             </div>
           </div>
 
           {/* Total Requests */}
-          <div className="bg-linear-to-br from-yellow-500 to-yellow-600 text-white rounded-2xl shadow-xl p-8 flex items-center space-x-6 transform hover:scale-105 transition">
-            <div className="p-4 bg-white bg-opacity-20 rounded-full">
+          <div className="bg-linear-to-br from-yellow-500 to-yellow-600 text-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center space-x-6 transform hover:scale-105 transition">
+            <div className="p-1 md:p-4 bg-white bg-opacity-20 rounded-full">
               <Droplet className='text-black fill-red-600' size={48} />
             </div>
             <div>
               <h3 className="text-4xl font-bold">{stats.totalRequests}</h3>
-              <p className="text-lg mt-2 opacity-90">Total Requests</p>
+              <p className="text-lg md:mt-2 opacity-90">Total Requests</p>
             </div>
           </div>
         </div>

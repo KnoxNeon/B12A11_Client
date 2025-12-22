@@ -71,23 +71,19 @@ export default function Login() {
           
           <div className="text-center lg:text-left max-w-lg">
             
-            <h1 className=" text-4xl md:text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-sky-900 to-sky-500 tracking-tight">
-              Welcome Back
-              <div className='flex gap-2 justify-center items-center'><span className="block text-transparent bg-clip-text bg-linear-to-r from-sky-900 to-sky-600">
-                Friend
-              </span><Dog className="w-10 h-10 md:w-16 md:h-16 text-sky-900" /></div>
+            <h1 className=" text-2xl md:text-5xl lg:text-10xl font-black text-transparent bg-clip-text bg-black tracking-tight">
+              Back to Save a 
+              <div className='text-red-500'>
+                Life?
+             </div>
               
             </h1>
-            
-            <p className="mt-6 lg:text-xl text-black leading-relaxed">
-              Furry Friend today, Family Member Tomorrow!
-            </p>
-            
+  
           </div>
 
           
           <div className="w-full max-w-md">
-            <div className="bg-sky-800 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700 p-8">
+            <div className="bg-linear-to-b from-sky-900 to-black backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700 p-8">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Login to Continue
               </h2>

@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from "motion/react"
 
 const Featured = () => {
     const benefits = [
@@ -29,7 +29,9 @@ const Featured = () => {
     },
   ];
   return (
+    
     <section className="relative bg-cover bg-center bg-no-repeat py-20">
+    
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-red-600 mb-4">
@@ -39,9 +41,14 @@ const Featured = () => {
             Not only do you save lives — you also improve your own health and well-being!
           </p>
         </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {benefits.map((benefit, index) => (
+        <motion.div
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1, transition: { duration: 1 } }}
+      >
             <div
               key={index}
               className="bg-white bg-opacity-95 rounded-2xl border border-red-200 shadow-xl p-8 text-center transform hover:scale-105 hover:bg-opacity-100 transition-all duration-300"
@@ -53,7 +60,7 @@ const Featured = () => {
               <p className="text-gray-700 leading-relaxed">
                 {benefit.description}
               </p>
-            </div>
+            </div></motion.div>
           ))}
         </div>
       </div>
