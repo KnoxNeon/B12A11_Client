@@ -9,7 +9,7 @@ const RequestCard = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:3000/public-requests')
+      .get('donatebloodserver.vercel.app/public-requests')
       .then((res) => {
         setRequests(res.data.requests || []);
         setLoading(false);

@@ -110,7 +110,7 @@ export default function Register() {
             });
 
             setUser(user);
-            axios.post('http://localhost:3000/users', formData)
+            axios.post('donatebloodserver.vercel.app/users', formData)
             .then(res => {console.log(res.data)})
             .catch(err => console.log(err))
 
