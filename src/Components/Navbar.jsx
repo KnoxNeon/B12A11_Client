@@ -27,7 +27,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <div className="navbar z-10 bg-gray-400 text-white font-normal border-t border-white/10 w-full text-grey shadow-sm">
+      <div className="navbar z-10 text-white font-normal border-t border-white/10 w-full text-grey shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,7 +76,7 @@ const Navbar = () => {
           <NavLink className="flex lg:pl-4 md:gap-4">
             <div className='flex items-center'>
               <img className="h-16 w-16 hover:scale-120" src="../logo.png" alt=""/>
-               <p className='text-2xl'><span className='text-black'>H</span>emio</p>
+               <p className='text-2xl text-black'>H<span className='text-red-600'>emio</span></p>
             </div>
           </NavLink>
         </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
         <div className="navbar-end ">
           {user && (
             <div className="flex gap-2">
-              <Link to="/profile">
+              <Link to="/dashboard/my-profile">
                 <img
                   className="w-10 h-10 rounded-4xl border-2 border-black hover:scale-110"
                   src={user.photoURL}

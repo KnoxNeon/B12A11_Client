@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const Banner = () => {
   return (
-    <div className="flex mx-auto w-full h-150 text-center bg-sky-900">
+    <div className="flex mx-auto w-full h-150 text-center bg-linear-to-b from-sky-900 to-gray-800">
       
         <img src="../banner.png" alt="Blood donation" className="" />
       

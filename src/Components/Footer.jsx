@@ -1,53 +1,141 @@
-import { FaXTwitter } from "react-icons/fa6";
+import React from 'react';
+import { Link } from 'react-router';
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer z-10 sm:footer-horizontal bg-gray-400 text-white p-10">
-  <aside>
-    <img className='h-24 w-24' src="./logologo.png" alt="" />
-    <p className=''>
-      Providing reliable pet services since 1992
-    </p>
-  </aside>
- 
-  <nav>
-    <h6 className="footer-title text-yellow-400">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
-  </nav>
-   <nav>
-    <h6 className="footer-title text-yellow-400">Social</h6>
-    <div className="grid grid-flow-col gap-4">
-      <a>
-        <FaXTwitter className="w-6 h-6" />
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className="fill-current">
-          <path
-            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-        </svg>
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className="fill-current">
-          <path
-            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-        </svg>
-      </a>
-    </div>
-  </nav>
-</footer>
+    <footer className="bg-linear-to-b from-sky-900 to-black text-white">
+     
 
-)
-}
-export default Footer
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          <div className="space-y-6">
+            <div className="flex items-center space-x-3">
+              <img src='../logo.png'className='h-16 w-16' alt="" />
+              <h3 className="text-3xl font-bold">Hemio</h3>
+            </div>
+            <p className="text-gray-300 leading-relaxed max-w-xs">
+              Connecting donors with those in need. Together, we save lives — one drop at a time.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="p-3 bg-red-700 rounded-full hover:bg-red-600 transition">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="p-3 bg-red-700 rounded-full hover:bg-red-600 transition">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="p-3 bg-red-700 rounded-full hover:bg-red-600 transition">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="p-3 bg-red-700 rounded-full hover:bg-red-600 transition">
+                <Youtube size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-semibold mb-6 text-red-300">Quick Links</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/" className="hover:text-red-300 transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/search" className="hover:text-red-300 transition">
+                  Search Donors
+                </Link>
+              </li>
+              <li>
+                <Link to="/register" className="hover:text-red-300 transition">
+                  Become a Donor
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-red-300 transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-red-300 transition">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          
+          <div>
+            <h4 className="text-xl font-semibold mb-6 text-red-300">Resources</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link to="https://www.redcrossblood.org/donate-blood/blood-types.html" className="hover:text-red-300 transition">
+                  Blood Types Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="https://www.redcrossblood.org/donate-blood/blood-donation-process/donation-process-overview.html" className="hover:text-red-300 transition">
+                  Donation Process
+                </Link>
+              </li>
+              <li>
+                <Link to="https://www.healthline.com/health/benefits-of-donating-blood" className="hover:text-red-300 transition">
+                  Health Benefits
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+         
+          <div>
+            <h4 className="text-xl font-semibold mb-6 text-red-300">Contact Us</h4>
+            <div className="space-y-5">
+              <div className="flex items-center space-x-4">
+                <Phone size={20} className="text-red-300" />
+                <div>
+                  <p className="font-medium">Emergency Hotline</p>
+                  <p className="text-lg">+880 123 456 789</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Mail size={20} className="text-red-300" />
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p>support@hemio.org</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <MapPin size={20} className="text-red-300" />
+                <div>
+                  <p className="font-medium">Location</p>
+                  <p>Dhaka, Bangladesh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div className="border-t border-red-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <p className="text-gray-400 mb-4 md:mb-0">
+            © 2025 Hemio. All rights reserved. Saving lives together.
+          </p>
+          <div className="flex space-x-6 text-sm">
+            <Link to="/privacy" className="text-gray-400 hover:text-white transition">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-gray-400 hover:text-white transition">
+              Terms of Service
+            </Link>
+            <Link to="/contact" className="text-gray-400 hover:text-white transition">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
